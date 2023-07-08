@@ -8,6 +8,7 @@ import { NgModule, isDevMode } from '@angular/core';
 // Local Imports
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 		StoreModule.forRoot({}, {}),
 		EffectsModule.forRoot([]),
 		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+  BrowserAnimationsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
