@@ -16,7 +16,7 @@
 	<div class="d-flex flex-column gap-3">
 		<ng-container *ngFor="let link of links">
 			<div [routerLink]="link.path" routerLinkActive="text-primary" class="d-flex gap-3 user-select-none pointer">
-				<img [src]="'assets/icons/' + link.icon" alt="navigation-icon" />
+				<app-svg-icon [src]="'assets/icons/' + link.icon" />
 				<p>{{ link.name }}</p>
 			</div>
 		</ng-container>
