@@ -9,11 +9,11 @@ import { Operation } from 'src/app/core/models';
 import { selectOperations, loadOperations } from '../../+state';
 
 @Component({
-	selector: 'app-log-page',
-	templateUrl: './log-page.component.html',
-	styleUrls: ['./log-page.component.scss'],
+	selector: 'app-operations-page',
+	templateUrl: './operations-page.component.html',
+	styleUrls: ['./operations-page.component.scss'],
 })
-export class LogPageComponent {
+export class OperationsPageComponent {
 	public operations$ = this.store.select(selectOperations);
 
 	constructor(private store: Store) {

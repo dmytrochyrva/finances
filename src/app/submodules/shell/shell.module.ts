@@ -8,10 +8,14 @@ import { CoreModule } from 'src/app/core/core.module';
 // Local Imports
 import { ShellRoutingModule } from './shell-routing.module';
 import { ShellComponent } from './components/shell/shell.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
 	declarations: [
-    ShellComponent
+    ShellComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
 	imports: [CommonModule, ShellRoutingModule, CoreModule],
 })

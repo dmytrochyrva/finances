@@ -12,13 +12,24 @@ const routes: Routes = [
 		children: [
 			{ path: '', redirectTo: 'log', pathMatch: 'full' },
 			{
-				path: 'log',
-				loadChildren: () => import('src/app/submodules/log-page/log-page.module').then((m) => m.LogPageModule),
+				path: 'operations',
+				loadChildren: () =>
+					import('src/app/submodules/operations-page/operations-page.module').then((m) => m.OperatoinsPageModule),
 			},
 			{
 				path: 'dashboard',
 				loadChildren: () =>
 					import('src/app/submodules/dashboard-page/dashboard-page.module').then((m) => m.DashboardPageModule),
+			},
+			{
+				path: 'settings',
+				loadChildren: () =>
+					import('src/app/submodules/operations-page/operations-page.module').then((m) => m.OperatoinsPageModule),
+			},
+			{
+				path: 'user-profile',
+				loadChildren: () =>
+					import('src/app/submodules/operations-page/operations-page.module').then((m) => m.OperatoinsPageModule),
 			},
 		],
 	},

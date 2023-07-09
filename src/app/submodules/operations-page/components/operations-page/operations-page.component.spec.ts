@@ -2,7 +2,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 // Local Imports
-import { LogPageComponent } from './log-page.component';
+import { LogPageComponent } from './operations-page.component';
 
 describe('LogPageComponent', () => {
 	let component: LogPageComponent;

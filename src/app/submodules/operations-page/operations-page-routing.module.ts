@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Local Imports
-import { LogPageComponent } from './components/log-page/log-page.component';
+import { OperationsPageComponent } from './components/operations-page/operations-page.component';
 
-const routes: Routes = [{ path: '', component: LogPageComponent }];
+const routes: Routes = [{ path: '', component: OperationsPageComponent }];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule],
 })
-export class LogPageRoutingModule {}
+export class OperationsPageRoutingModule {}

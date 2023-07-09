@@ -1,0 +1,24 @@
+<div [style.width.rem]="13.5" class="d-flex flex-column gap-4 h-100 p-4 shadow-right">
+	<div class="d-flex flex-column gap-3">
+		<div>
+			<small>Balance:</small>
+			<p class="text-warning fw-bolder">1,000 EUR</p>
+		</div>
+
+		<div>
+			<small>Savings:</small>
+			<p class="text-success fw-bolder">5,000 EUR</p>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="d-flex flex-column gap-3">
+		<ng-container *ngFor="let link of links">
+			<div [routerLink]="link.path" routerLinkActive="text-primary" class="d-flex gap-3 user-select-none pointer">
+				<img [src]="'assets/icons/' + link.icon" alt="navigation-icon" />
+				<p>{{ link.name }}</p>
+			</div>
+		</ng-container>
+	</div>
+</div>

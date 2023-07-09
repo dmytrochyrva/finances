@@ -8,10 +8,10 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ApiService } from 'src/app/core/services/api.service';
 
 // Local Imports
-import { loadOperations, loadOperationsFailed, loadOperationsSuccess } from './log-page.actions';
+import { loadOperations, loadOperationsFailed, loadOperationsSuccess } from './operations-page.actions';
 
 @Injectable()
-export class LogPageEffects {
+export class OperationsPageEffects {
 	public loadOperations$ = createEffect(() =>
 		this.actions$.pipe(
 			ofType(loadOperations),
