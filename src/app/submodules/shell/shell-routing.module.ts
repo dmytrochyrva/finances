@@ -10,7 +10,7 @@ const routes: Routes = [
 		path: '',
 		component: ShellComponent,
 		children: [
-			{ path: '', redirectTo: 'log', pathMatch: 'full' },
+			{ path: '', redirectTo: 'dashboard', pathMatch: 'full' },
 			{
 				path: 'operations',
 				loadChildren: () =>
