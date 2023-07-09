@@ -1,11 +1,56 @@
 <div class="d-flex flex-column gap-3 h-100">
-	<h3>Operations:</h3>
+	<div class="d-flex align-items-center justify-content-between">
+		<h3>Operations</h3>
+
+		<div class="d-flex align-items-center bg-info rounded pointer" (click)="openAddOperationModal()">
+			<span class="btn btn-info px-3 text-white">Add</span>
+			<app-svg-icon class="px-2" src="assets/icons/plus.svg"></app-svg-icon>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="container-fluid shadow">
+		<div class="row p-3">
+			<div class="col-1 fw-bold">Id</div>
+			<div class="col-2 fw-bold">Date</div>
+			<div class="col-3 fw-bold">Description</div>
+			<div class="col-2 fw-bold">Category</div>
+			<div class="col-2 fw-bold">Amount</div>
+			<div class="col-2 fw-bold">Balance</div>
+		</div>
+	</div>
 
 	<div class="flex-grow-1">
 		<div class="h-100 position-relative overflow-auto">
-			<div class="position-absolute all-0">
+			<div class="container-fluid position-absolute all-0 d-flex flex-column gap-1">
 				<ng-container *ngIf="operations$ | async as operations">
-					<pre> {{ operations | json }}</pre>
+					<ng-container *ngFor="let operation of operations">
+						<ng-container *ngIf="!isTheSameDay(operation.date)">
+							<div class="py-1 px-3 bg-secondary">{{ operation.date | date }}</div>
+						</ng-container>
+
+						<div class="row p-3">
+							<div class="col-1">{{ operation.id }}</div>
+							<div class="col-2">{{ operation.date | date : 'yyyy-mm-dd' }}</div>
+							<div class="col-3">{{ operation.description }}</div>
+
+							<div class="col-2">
+								<span class="badge bg-success">{{ operation.category }}</span>
+							</div>
+
+							<ng-container *ngIf="operation.income">
+								<div class="col-2 text-success">+{{ operation.income }}</div>
+							</ng-container>
+
+							<ng-container *ngIf="operation.debit">
+								<div class="col-2 text-danger">-{{ operation.debit }}</div>
+							</ng-container>
+
+							<div class="col-2">{{ operation.balance | currency : 'EUR' }}</div>
+						</div>
+						<hr />
+					</ng-container>
 				</ng-container>
 			</div>
 		</div>
